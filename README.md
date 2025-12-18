@@ -17,13 +17,18 @@ O aplicație de galerie modernă realizată cu JavaScript Vanilla și Tailwind C
 - **CSS Custom**: Am adăugat o clasă `.is-hidden` pentru a gestiona tranzițiile.
 - **JS**: Logica este modulară, separând responsabilitatea de filtrare de cea de actualizare a interfeței (UI).
 
-## CI / GitHub Actions
+## CI / GitHub Actions & Demo Live
 
-Am adăugat un workflow GitHub Actions pentru build și încărcare artefacte.
+Am adăugat un workflow GitHub Actions care construiește proiectul, încarcă artefactele și publică build-ul pe GitHub Pages.
 
 - **Fișier workflow:** `.github/workflows/ci.yml` ([gallery-filter/.github/workflows/ci.yml](gallery-filter/.github/workflows/ci.yml))
 - **Trigger:** `push` pe ramura `main` și `workflow_dispatch` (manual)
-- **Detalii:** rulează pe Node.js matrix (18, 20), folosește `npm ci` și `npm run build`, apoi încarcă artefactele de build.
+- **Detalii:** rulează pe Node.js matrix (18, 20), folosește `npm ci` și `npm run build`, încarcă artefactele și apoi publică conținutul `dist` pe GitHub Pages.
+
+Demo Live și badge:
+
+- Demo Live: https://Druid45ra.github.io/gallery-filter/
+- Workflow status: ![CI status](https://github.com/Druid45ra/gallery-filter/actions/workflows/ci.yml/badge.svg?branch=main)
 
 Cum rulezi workflow-ul local:
 
@@ -40,4 +45,4 @@ cd gallery-filter
 npm run run-workflow
 ```
 
-Doresc să extind workflow-ul cu teste sau deploy? Spune-mi ce preferi.
+Dacă vrei, pot adăuga un badge de Pages sau pași adiționali în workflow (teste, deploy către altă platformă, invalidare cache). Spune-mi ce preferi.
