@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Image Gallery | Filter System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Utility for smooth transitions */
+        .gallery-item {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .gallery-item.is-hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <header class="py-12 text-center">
+        <h1 class="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-5xl">Galeria Noastră</h1>
+        <p class="mt-4 text-lg text-gray-600">Explorează portofoliul nostru prin filtre dinamice.</p>
+
+        <div id="filter-buttons" class="mt-8 flex flex-wrap justify-center gap-4">
+            <button data-filter="all"
+                class="filter-btn active px-6 py-2 rounded-full font-medium transition-all duration-300 bg-indigo-600 text-white shadow-md">
+                Toate
+            </button>
+            <button data-filter="peisaj"
+                class="filter-btn px-6 py-2 rounded-full font-medium transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100 border border-gray-200">
+                Peisaje
+            </button>
+            <button data-filter="portret"
+                class="filter-btn px-6 py-2 rounded-full font-medium transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100 border border-gray-200">
+                Portrete
+            </button>
+            <button data-filter="urban"
+                class="filter-btn px-6 py-2 rounded-full font-medium transition-all duration-300 bg-white text-gray-700 hover:bg-gray-100 border border-gray-200">
+                Urban
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 pb-20">
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="gallery-item group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                data-category="peisaj">
+                <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                        alt="Munte la apus"
+                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Peisaj</span>
+                    <h3 class="mt-1 text-lg font-bold">Munte la apus</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                data-category="portret">
+                <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80"
+                        alt="Portret feminin"
+                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Portret</span>
+                    <h3 class="mt-1 text-lg font-bold">Lumina naturală</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                data-category="urban">
+                <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=600&q=80"
+                        alt="Oraș noaptea"
+                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Urban</span>
+                    <h3 class="mt-1 text-lg font-bold">Arhitectură modernă</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                data-category="peisaj">
+                <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80"
+                        alt="Pădure în ceață"
+                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Peisaj</span>
+                    <h3 class="mt-1 text-lg font-bold">Ceața dimineții</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item group relative overflow-hidden rounded-2xl bg-white shadow-lg"
+                data-category="urban">
+                <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&q=80"
+                        alt="Skyline Chicago"
+                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-indigo-500">Urban</span>
+                    <h3 class="mt-1 text-lg font-bold">Orizont Urban</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
